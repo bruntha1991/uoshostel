@@ -27,6 +27,49 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         $context = $this->context;
         $request = $this->request;
 
+        if (0 === strpos($pathinfo, '/images/example')) {
+            // _assetic_e0c97ce
+            if ($pathinfo === '/images/example.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0c97ce',  'pos' => NULL,  '_format' => 'jpg',  '_route' => '_assetic_e0c97ce',);
+            }
+
+            // _assetic_e0c97ce_0
+            if ($pathinfo === '/images/example_slide-01_1.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0c97ce',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_e0c97ce_0',);
+            }
+
+            // _assetic_e8d2308
+            if ($pathinfo === '/images/example.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e8d2308',  'pos' => NULL,  '_format' => 'jpg',  '_route' => '_assetic_e8d2308',);
+            }
+
+            // _assetic_e8d2308_0
+            if ($pathinfo === '/images/example_slide-02_1.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e8d2308',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_e8d2308_0',);
+            }
+
+            // _assetic_b53d663
+            if ($pathinfo === '/images/example.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b53d663',  'pos' => NULL,  '_format' => 'jpg',  '_route' => '_assetic_b53d663',);
+            }
+
+            // _assetic_b53d663_0
+            if ($pathinfo === '/images/example_slide-03_1.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b53d663',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_b53d663_0',);
+            }
+
+            // _assetic_b9c07ce
+            if ($pathinfo === '/images/example.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b9c07ce',  'pos' => NULL,  '_format' => 'jpg',  '_route' => '_assetic_b9c07ce',);
+            }
+
+            // _assetic_b9c07ce_0
+            if ($pathinfo === '/images/example_size_1.jpg') {
+                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b9c07ce',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_b9c07ce_0',);
+            }
+
+        }
+
         if (0 === strpos($pathinfo, '/_')) {
             // _wdt
             if (0 === strpos($pathinfo, '/_wdt') && preg_match('#^/_wdt/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
@@ -135,9 +178,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // uosuos_homepage
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'uosuos_homepage')), array (  '_controller' => 'uos\\uosBundle\\Controller\\DefaultController::indexAction',));
+        // uosuos_uos
+        if ($pathinfo === '/uos') {
+            return array (  '_controller' => 'uos\\uosBundle\\Controller\\DefaultController::uosAction',  '_route' => 'uosuos_uos',);
         }
 
         if (0 === strpos($pathinfo, '/room')) {

@@ -1,6 +1,6 @@
-uosuos_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: uosuosBundle:Default:index }
+uosuos_uos:
+    pattern:  /uos
+    defaults: { _controller: uosuosBundle:Default:uos }
     
 uosuosBundle_room:
         resource: "@uosuosBundle/Resources/config/routing/room.yml"
