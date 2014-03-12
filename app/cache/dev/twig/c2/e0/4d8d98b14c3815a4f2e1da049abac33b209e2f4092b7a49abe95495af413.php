@@ -62,7 +62,10 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
               <li class=\"active\"><a href=\"\">Welcome</a></li>
               <li><a href=\"\">Add</a></li>
               <li><a href=\"#\">Link</a></li>
-              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"";
+        // line 31
+        echo $this->env->getExtension('routing')->getPath("room_new");
+        echo "\">Link</a></li>
               <li class=\"nav-header\">Sidebar</li>
               <li><a href=\"#\">Link</a></li>
               <li><a href=\"#\">Link</a></li>
@@ -90,6 +93,6 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
 
     public function getDebugInfo()
     {
-        return array (  59 => 25,  56 => 24,  46 => 17,  39 => 13,  32 => 8,  29 => 7,);
+        return array (  67 => 31,  59 => 25,  56 => 24,  46 => 17,  39 => 13,  32 => 8,  29 => 7,);
     }
 }
