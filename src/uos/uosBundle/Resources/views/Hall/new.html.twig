@@ -1,6 +1,13 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
+
+
+        
+        
+{% block container -%}
+        <div class="span10">
+            <div class="containerHome" >
+                
     <h1>Hall creation</h1>
 
     {{ form(form) }}
@@ -13,3 +20,25 @@
     </li>
 </ul>
 {% endblock %}
+    
+    {%block sideMenu %}
+
+<ul class="nav nav-list">
+                <li class="nav-header"><b>Home</b></li>
+              <li class="active"><a href="">Welcome</a></li>
+              <li><a href="">Add</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Sidebar</li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="nav-header">Hall Hall Hall</li>
+              <li><a href="">Add Hall</a></li>
+              <li><a href="">Edit Hall</a></li>
+              <li><a href="">Delete Hall</a></li>              
+            </ul>
+{%endblock%}
