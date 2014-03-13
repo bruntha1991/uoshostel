@@ -41,10 +41,33 @@ class HallController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
+            
+            
+            $em1 = $this->getDoctrine()->getEntityManager();
+            $repository = $em1->getRepository('uosuosBundle:Hall');
 
-            return $this->redirect($this->generateUrl('hall_show', array('id' => $entity->getId())));
+        
+            $hall = $repository->findOneBy(array('hallname' => $entity->getHallname()));
+            
+            if($hall)
+            {
+                return $this->render('uosuosBundle:Hall:new.html.twig', array(
+            'entity' => $entity,
+            'form'   => $form->createView(),
+                    'error'=>'Hall already exist'
+        ));
+            }
+            else
+            {
+                $em->persist($entity);
+            $em->flush();
+                return $this->redirect($this->generateUrl('hall_show', array('id' => $entity->getId())));
+            }
+
+            
+            
+
+            
         }
 
         return $this->render('uosuosBundle:Hall:new.html.twig', array(

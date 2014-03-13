@@ -33,16 +33,35 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
             <div class=\"containerHome\" >
                 
     <h1>Hall creation</h1>
-
-    ";
+    
+";
         // line 13
+        if (array_key_exists("error", $context)) {
+            // line 14
+            echo "    
+    <h2> ";
+            // line 15
+            echo twig_escape_filter($this->env, $this->getContext($context, "error"), "html", null, true);
+            echo "</h2>
+    
+    ";
+        }
+        // line 18
+        echo "    
+    
+    
+    ";
+        // line 21
         echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "form"), 'form');
         echo "
+    
+    
+    
 
         <ul class=\"record_actions\">
     <li class=\"nav-header\">
         <a href=\"";
-        // line 17
+        // line 28
         echo $this->env->getExtension('routing')->getPath("hall");
         echo "\">
             Back to the list
@@ -52,10 +71,10 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
 ";
     }
 
-    // line 24
+    // line 35
     public function block_sideMenu($context, array $blocks = array())
     {
-        // line 25
+        // line 36
         echo "
 <ul class=\"nav nav-list\">
                 <li class=\"nav-header\"><b>Home</b></li>
@@ -63,7 +82,7 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
               <li><a href=\"\">Add</a></li>
               <li><a href=\"#\">Link</a></li>
               <li><a href=\"";
-        // line 31
+        // line 42
         echo $this->env->getExtension('routing')->getPath("room_new");
         echo "\">Link</a></li>
               <li class=\"nav-header\">Sidebar</li>
@@ -93,6 +112,6 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
 
     public function getDebugInfo()
     {
-        return array (  67 => 31,  59 => 25,  56 => 24,  46 => 17,  39 => 13,  32 => 8,  29 => 7,);
+        return array (  86 => 42,  78 => 36,  75 => 35,  65 => 28,  55 => 21,  50 => 18,  44 => 15,  41 => 14,  39 => 13,  32 => 8,  29 => 7,);
     }
 }

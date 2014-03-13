@@ -9,8 +9,19 @@
             <div class="containerHome" >
                 
     <h1>Hall creation</h1>
-
+    
+{% if error is defined%}
+    
+    <h2> {{error}}</h2>
+    
+    {%endif%}
+    
+    
+    
     {{ form(form) }}
+    
+    
+    
 
         <ul class="record_actions">
     <li class="nav-header">
