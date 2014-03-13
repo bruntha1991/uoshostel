@@ -1,45 +1,75 @@
 {% extends '::base.html.twig' %}
 
-{% block body -%}
-    <h1>Hall list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Hallname</th>
-                <th>Capacity</th>
-                <th>Gender</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+{% block container -%}
+<div class="span8">
+    <div class="containerHome" >
+        <h1>Hall list</h1>
+        
+        <script src="assets/js/jquery.tablesorter.min.js"></script>
+        <script >
+            $(function() {
+                $("table#sortTableExample").tablesorter({sortList: [[1, 0]]});
+            });
+        </script>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Hallname</th>
+                    <th>Capacity</th>
+                    <th>Gender</th>
+                    
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
         {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('hall_show', { 'id': entity.id }) }}">{{ entity.hallname }}</a></td>
-                <td>{{ entity.capacity }}</td>
-                <td>{{ entity.gender }}</td>
-                <td>{{ entity.id }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('hall_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('hall_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
+                <tr>
+                    <td><a href="{{ path('hall_show', { 'id': entity.id }) }}">{{ entity.hallname }}</a></td>
+                    <td>{{ entity.capacity }}</td>
+                    <td>{{ entity.gender }}</td>
+                    
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('hall_show', { 'id': entity.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('hall_edit', { 'id': entity.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
         {% endfor %}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
         <ul>
-        <li>
-            <a href="{{ path('hall_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+            <li>
+                <a href="{{ path('hall_new') }}">
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
     {% endblock %}
+
+    {%block sideMenu %}
+
+        <ul class="nav nav-list">
+            <li class="nav-header"><b>Home</b></li>
+            <li class="active"><a href="">Welcome</a></li>
+            <li><a href="">Add</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="{{ path('room_new')}}">Link</a></li>
+            <li class="nav-header">Sidebar</li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="nav-header">Hall Hall Hall</li>
+            <li><a href="">Add Hall</a></li>
+            <li><a href="">Edit Hall</a></li>
+            <li><a href="">Delete Hall</a></li>              
+        </ul>
+{%endblock%}

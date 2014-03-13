@@ -10,7 +10,8 @@ class __TwigTemplate_fcb1e10c39c4529f37cb003be76a9f181167909725032c728cdc251e581
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'container' => array($this, 'block_container'),
+            'sideMenu' => array($this, 'block_sideMenu'),
         );
     }
 
@@ -25,30 +26,61 @@ class __TwigTemplate_fcb1e10c39c4529f37cb003be76a9f181167909725032c728cdc251e581
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_container($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Hall edit</h1>
+        echo "<div class=\"span10\">
+            <div class=\"containerHome\" >
+    <h1>Hall edit</h1>
 
     ";
-        // line 6
+        // line 8
         echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "edit_form"), 'form');
         echo "
 
         <ul class=\"record_actions\">
     <li>
         <a href=\"";
-        // line 10
+        // line 12
         echo $this->env->getExtension('routing')->getPath("hall");
         echo "\">
             Back to the list
         </a>
     </li>
     <li>";
-        // line 14
+        // line 16
         echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "delete_form"), 'form');
         echo "</li>
 </ul>
+";
+    }
+
+    // line 20
+    public function block_sideMenu($context, array $blocks = array())
+    {
+        // line 21
+        echo "
+<ul class=\"nav nav-list\">
+                <li class=\"nav-header\"><b>Home</b></li>
+              <li class=\"active\"><a href=\"\">Welcome</a></li>
+              <li><a href=\"\">Add</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"";
+        // line 27
+        echo $this->env->getExtension('routing')->getPath("room_new");
+        echo "\">Link</a></li>
+              <li class=\"nav-header\">Sidebar</li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li class=\"nav-header\">Hall Hall Hall</li>
+              <li><a href=\"\">Add Hall</a></li>
+              <li><a href=\"\">Edit Hall</a></li>
+              <li><a href=\"\">Delete Hall</a></li>              
+            </ul>
 ";
     }
 
@@ -64,6 +96,6 @@ class __TwigTemplate_fcb1e10c39c4529f37cb003be76a9f181167909725032c728cdc251e581
 
     public function getDebugInfo()
     {
-        return array (  49 => 14,  42 => 10,  35 => 6,  31 => 4,  28 => 3,);
+        return array (  70 => 27,  62 => 21,  59 => 20,  52 => 16,  45 => 12,  38 => 8,  32 => 4,  29 => 3,);
     }
 }

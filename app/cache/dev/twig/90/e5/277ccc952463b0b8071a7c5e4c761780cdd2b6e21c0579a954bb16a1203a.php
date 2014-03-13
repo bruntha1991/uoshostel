@@ -10,7 +10,7 @@ class __TwigTemplate_90e5277ccc952463b0b8071a7c5e4c761780cdd2b6e21c0579a954bb16a
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'container' => array($this, 'block_container'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_90e5277ccc952463b0b8071a7c5e4c761780cdd2b6e21c0579a954bb16a
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_container($context, array $blocks = array())
     {
         // line 4
         echo "<h1>Room creation</h1>

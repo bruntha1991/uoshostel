@@ -58,16 +58,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'assetic.controller:render',  'name' => 'b53d663',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_b53d663_0',);
             }
 
-            // _assetic_b9c07ce
-            if ($pathinfo === '/images/example.jpg') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b9c07ce',  'pos' => NULL,  '_format' => 'jpg',  '_route' => '_assetic_b9c07ce',);
-            }
-
-            // _assetic_b9c07ce_0
-            if ($pathinfo === '/images/example_size_1.jpg') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => 'b9c07ce',  'pos' => 0,  '_format' => 'jpg',  '_route' => '_assetic_b9c07ce_0',);
-            }
-
         }
 
         if (0 === strpos($pathinfo, '/_')) {

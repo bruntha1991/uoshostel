@@ -26,7 +26,7 @@ class __TwigTemplate_0d113c5e1be906498db8f89e71635cf7e763c5ed2ca444eb4f3600e0bfe
 <html lang=\"en\">
   <head>
     <meta charset=\"utf-8\">
-    <title>Bootstrap, from Twitter</title>
+    <title>University of Sumanadasa, Hostel Management System</title>
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
@@ -97,7 +97,7 @@ class __TwigTemplate_0d113c5e1be906498db8f89e71635cf7e763c5ed2ca444eb4f3600e0bfe
             <span class=\"icon-bar\"></span>
             <span class=\"icon-bar\"></span>
           </button>
-          <a class=\"brand\" href=\"#\">Halls Management System for University of Sumanadasa</a>
+          <a class=\"brand\" href=\"#\">Hostel Management System for University of Sumanadasa</a>
           <div class=\"nav-collapse collapse\">
             <p class=\"navbar-text pull-right\">
               Logged in as <a href=\"#\" class=\"navbar-link\">name</a>
@@ -275,6 +275,6 @@ class __TwigTemplate_0d113c5e1be906498db8f89e71635cf7e763c5ed2ca444eb4f3600e0bfe
 
     public function getDebugInfo()
     {
-        return array (  262 => 126,  257 => 125,  252 => 118,  246 => 117,  241 => 77,  236 => 71,  228 => 127,  225 => 126,  223 => 125,  213 => 119,  211 => 118,  207 => 117,  193 => 106,  189 => 105,  185 => 104,  181 => 103,  177 => 102,  173 => 101,  169 => 100,  165 => 99,  161 => 98,  157 => 97,  153 => 96,  149 => 95,  145 => 94,  128 => 79,  126 => 77,  120 => 73,  118 => 71,  86 => 42,  82 => 41,  78 => 40,  74 => 39,  70 => 38,  59 => 30,  37 => 11,  25 => 1,);
+        return array (  262 => 126,  257 => 125,  252 => 118,  246 => 117,  241 => 77,  236 => 71,  228 => 127,  225 => 126,  223 => 125,  213 => 119,  211 => 118,  207 => 117,  193 => 106,  189 => 105,  185 => 104,  181 => 103,  177 => 102,  173 => 101,  169 => 100,  165 => 99,  161 => 98,  157 => 97,  153 => 96,  149 => 95,  145 => 94,  128 => 79,  126 => 77,  120 => 73,  118 => 71,  86 => 42,  82 => 41,  78 => 40,  70 => 38,  37 => 11,  25 => 1,  99 => 40,  92 => 35,  80 => 29,  74 => 39,  67 => 22,  63 => 21,  59 => 30,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,);
     }
 }

@@ -10,7 +10,8 @@ class __TwigTemplate_3f0d69acc83de9de4308200de3c88411e02c211b6cbbe1cc77f609cf75e
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'container' => array($this, 'block_container'),
+            'sideMenu' => array($this, 'block_sideMenu'),
         );
     }
 
@@ -25,84 +26,118 @@ class __TwigTemplate_3f0d69acc83de9de4308200de3c88411e02c211b6cbbe1cc77f609cf75e
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_container($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>Hall list</h1>
-
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Hallname</th>
-                <th>Capacity</th>
-                <th>Gender</th>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+        echo "<div class=\"span8\">
+    <div class=\"containerHome\" >
+        <h1>Hall list</h1>
+        
+        <script src=\"assets/js/jquery.tablesorter.min.js\"></script>
+        <script >
+            \$(function() {
+                \$(\"table#sortTableExample\").tablesorter({sortList: [[1, 0]]});
+            });
+        </script>
+        <table class=\"table\">
+            <thead>
+                <tr>
+                    <th>Hallname</th>
+                    <th>Capacity</th>
+                    <th>Gender</th>
+                    
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
         ";
-        // line 17
+        // line 25
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "entities"));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 18
-            echo "            <tr>
-                <td><a href=\"";
-            // line 19
+            // line 26
+            echo "                <tr>
+                    <td><a href=\"";
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_show", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "hallname"), "html", null, true);
             echo "</a></td>
-                <td>";
-            // line 20
+                    <td>";
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "capacity"), "html", null, true);
             echo "</td>
-                <td>";
-            // line 21
+                    <td>";
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "gender"), "html", null, true);
             echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "id"), "html", null, true);
-            echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 26
+                    
+                    <td>
+                        <ul>
+                            <li>
+                                <a href=\"";
+            // line 34
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_show", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
             echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 29
+                            </li>
+                            <li>
+                                <a href=\"";
+            // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_edit", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
             echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
-        echo "        </tbody>
-    </table>
+        // line 43
+        echo "            </tbody>
+        </table>
 
         <ul>
-        <li>
-            <a href=\"";
-        // line 40
+            <li>
+                <a href=\"";
+        // line 48
         echo $this->env->getExtension('routing')->getPath("hall_new");
         echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+                    Create a new entry
+                </a>
+            </li>
+        </ul>
     ";
+    }
+
+    // line 55
+    public function block_sideMenu($context, array $blocks = array())
+    {
+        // line 56
+        echo "
+        <ul class=\"nav nav-list\">
+            <li class=\"nav-header\"><b>Home</b></li>
+            <li class=\"active\"><a href=\"\">Welcome</a></li>
+            <li><a href=\"\">Add</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"";
+        // line 62
+        echo $this->env->getExtension('routing')->getPath("room_new");
+        echo "\">Link</a></li>
+            <li class=\"nav-header\">Sidebar</li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li><a href=\"#\">Link</a></li>
+            <li class=\"nav-header\">Hall Hall Hall</li>
+            <li><a href=\"\">Add Hall</a></li>
+            <li><a href=\"\">Edit Hall</a></li>
+            <li><a href=\"\">Delete Hall</a></li>              
+        </ul>
+";
     }
 
     public function getTemplateName()
@@ -117,6 +152,6 @@ class __TwigTemplate_3f0d69acc83de9de4308200de3c88411e02c211b6cbbe1cc77f609cf75e
 
     public function getDebugInfo()
     {
-        return array (  99 => 40,  92 => 35,  80 => 29,  74 => 26,  67 => 22,  63 => 21,  59 => 20,  53 => 19,  50 => 18,  46 => 17,  31 => 4,  28 => 3,);
+        return array (  126 => 62,  118 => 56,  115 => 55,  105 => 48,  98 => 43,  86 => 37,  80 => 34,  72 => 29,  68 => 28,  62 => 27,  59 => 26,  55 => 25,  32 => 4,  29 => 3,);
     }
 }

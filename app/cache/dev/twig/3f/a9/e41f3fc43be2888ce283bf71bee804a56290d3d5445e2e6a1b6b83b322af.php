@@ -10,7 +10,8 @@ class __TwigTemplate_3fa9e41f3fc43be2888ce283bf71bee804a56290d3d5445e2e6a1b6b83b
         $this->parent = $this->env->loadTemplate("::base.html.twig");
 
         $this->blocks = array(
-            'body' => array($this, 'block_body'),
+            'container' => array($this, 'block_container'),
+            'sideMenu' => array($this, 'block_sideMenu'),
         );
     }
 
@@ -25,66 +26,93 @@ class __TwigTemplate_3fa9e41f3fc43be2888ce283bf71bee804a56290d3d5445e2e6a1b6b83b
     }
 
     // line 3
-    public function block_body($context, array $blocks = array())
+    public function block_container($context, array $blocks = array())
     {
-        // line 4
-        echo "<h1>Hall</h1>
+        // line 5
+        echo "<div class=\"span2\">
+            <div class=\"containerHome\" >
+    <h1>Hall</h1>
 
-    <table class=\"record_properties\">
+    <table class=\"table\">
         <tbody>
             <tr>
                 <th>Hallname</th>
                 <td>";
-        // line 10
+        // line 13
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "hallname"), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Capacity</th>
                 <td>";
-        // line 14
+        // line 17
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "capacity"), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Gender</th>
                 <td>";
-        // line 18
+        // line 21
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "gender"), "html", null, true);
         echo "</td>
             </tr>
             <tr>
-                <th>Id</th>
-                <td>";
-        // line 22
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "entity"), "id"), "html", null, true);
-        echo "</td>
+                
             </tr>
         </tbody>
     </table>
 
         <ul class=\"record_actions\">
-    <li>
+    <li class=\"nav-header\">
         <a href=\"";
-        // line 29
+        // line 31
         echo $this->env->getExtension('routing')->getPath("hall");
         echo "\">
             Back to the list
         </a>
     </li>
-    <li>
+    <li class=\"nav-header\">
         <a href=\"";
-        // line 34
+        // line 36
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_edit", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
         echo "\">
             Edit
         </a>
     </li>
-    <li>";
-        // line 38
+    <li class=\"nav-header\">";
+        // line 40
         echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "delete_form"), 'form');
         echo "</li>
 </ul>
+";
+    }
+
+    // line 44
+    public function block_sideMenu($context, array $blocks = array())
+    {
+        // line 45
+        echo "
+<ul class=\"nav nav-list\">
+                <li class=\"nav-header\"><b>Home</b></li>
+              <li class=\"active\"><a href=\"\">Welcome</a></li>
+              <li><a href=\"\">Add</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"";
+        // line 51
+        echo $this->env->getExtension('routing')->getPath("room_new");
+        echo "\">Link</a></li>
+              <li class=\"nav-header\">Sidebar</li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li><a href=\"#\">Link</a></li>
+              <li class=\"nav-header\">Hall Hall Hall</li>
+              <li><a href=\"\">Add Hall</a></li>
+              <li><a href=\"\">Edit Hall</a></li>
+              <li><a href=\"\">Delete Hall</a></li>              
+            </ul>
 ";
     }
 
@@ -100,6 +128,6 @@ class __TwigTemplate_3fa9e41f3fc43be2888ce283bf71bee804a56290d3d5445e2e6a1b6b83b
 
     public function getDebugInfo()
     {
-        return array (  85 => 38,  78 => 34,  70 => 29,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,);
+        return array (  102 => 51,  94 => 45,  91 => 44,  84 => 40,  77 => 36,  69 => 31,  56 => 21,  49 => 17,  42 => 13,  32 => 5,  29 => 3,);
     }
 }
