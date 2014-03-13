@@ -40,7 +40,7 @@ class __TwigTemplate_c2e04d8d98b14c3815a4f2e1da049abac33b209e2f4092b7a49abe95495
         echo "
 
         <ul class=\"record_actions\">
-    <li>
+    <li class=\"nav-header\">
         <a href=\"";
         // line 17
         echo $this->env->getExtension('routing')->getPath("hall");

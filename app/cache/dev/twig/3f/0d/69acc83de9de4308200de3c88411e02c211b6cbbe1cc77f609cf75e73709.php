@@ -74,13 +74,13 @@ class __TwigTemplate_3f0d69acc83de9de4308200de3c88411e02c211b6cbbe1cc77f609cf75e
                     
                     <td>
                         <ul>
-                            <li>
+                            <li class=\"nav-header\">
                                 <a href=\"";
             // line 34
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_show", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
             echo "\">show</a>
                             </li>
-                            <li>
+                            <li class=\"nav-header\">
                                 <a href=\"";
             // line 37
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("hall_edit", array("id" => $this->getAttribute($this->getContext($context, "entity"), "id"))), "html", null, true);
@@ -99,7 +99,7 @@ class __TwigTemplate_3f0d69acc83de9de4308200de3c88411e02c211b6cbbe1cc77f609cf75e
         </table>
 
         <ul>
-            <li>
+            <li class=\"nav-header\">
                 <a href=\"";
         // line 48
         echo $this->env->getExtension('routing')->getPath("hall_new");

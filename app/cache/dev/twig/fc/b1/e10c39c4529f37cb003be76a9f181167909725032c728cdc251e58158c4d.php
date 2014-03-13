@@ -39,7 +39,7 @@ class __TwigTemplate_fcb1e10c39c4529f37cb003be76a9f181167909725032c728cdc251e581
         echo "
 
         <ul class=\"record_actions\">
-    <li>
+    <li class=\"nav-header\">
         <a href=\"";
         // line 12
         echo $this->env->getExtension('routing')->getPath("hall");
@@ -47,7 +47,7 @@ class __TwigTemplate_fcb1e10c39c4529f37cb003be76a9f181167909725032c728cdc251e581
             Back to the list
         </a>
     </li>
-    <li>";
+    <li class=\"nav-header\">";
         // line 16
         echo         $this->env->getExtension('form')->renderer->renderBlock($this->getContext($context, "delete_form"), 'form');
         echo "</li>
